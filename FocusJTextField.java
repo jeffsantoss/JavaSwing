@@ -1,6 +1,5 @@
 import java.awt.*;
 import java.awt.event.*;
-
 import javax.swing.*;
 
 public class FocusJTextField extends JFrame {
@@ -15,19 +14,8 @@ JPanel panel;
   panel = new JPanel();
   field1 = new JTextField( 10 );
   field2 = new JTextField( 10 );
-  field1.addFocusListener(new FocusListener(){
-
-	@Override
-	public void focusGained(FocusEvent arg0) {
-		field1.setText("");	
-	}
-
-	@Override
-	public void focusLost(FocusEvent arg0) {
-		field1.setText("Please put any text.");	
-	}
-	  
-  });
+  field1.addFocusListener(new Focus(field1,"Text here",""));
+  
   panel.add( new JLabel("Field 1:"));
   panel.add( field1 );
   panel.add( new JLabel("Field 2:"));
